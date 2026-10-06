@@ -19,8 +19,15 @@ I do not host your sensitive data[cite: 28]. I deliver fully containerized, repr
 
 Below is the raw terminal telemetry verifying an asynchronous batch execution processing **10,000,000 records** on a 128GB ECC RAM bare-metal workstation without cloud compute charges:
 
-![10M Async Inference RAM Lock Demo](pcie-bar1-unlocked-and-htop-o1-memory-lock-9-4gb.jpg)
-> **Raw Telemetry Verification**: `htop` showing host RAM strictly locked at **9.4GB (O(1) constant space)** with **0B Swap** utilization during peak asynchronous processing.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dcd64b8d-d681-44a8-a645-56aa69602945" alt="10M Records @ 0.00% Error Rate" width="100%">
+</p>
+<br>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/84fad2e1-c574-49d2-951b-0d26c15582f9" alt="Host RAM Locked at 9.4GB Max (O(1))" width="100%">
+</p>
+
+> **Raw Telemetry Verification:** The left panel demonstrates the 10,000,000 record completion with a 0.00% error rate and `PRAGMA integrity_check: ok`. The right panel displays the host RAM strictly bound to **9.4GB (O(1) constant space)** with **0B Swap** utilization via `libjemalloc2` injection during peak asynchronous processing.
 
 ---
 
