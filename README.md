@@ -80,5 +80,11 @@ docker run -d \
   -v /usr/lib/wsl/lib:/usr/lib/wsl/lib:ro \
   -e LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.2:/usr/lib/wsl/lib/libcuda.so.1" \
   -e MALLOC_CONF="background_thread:true,dirty_decay_ms:2000,muzzy_decay_ms:2000" \
+  -e ZMQ_MAX_SOCKETS=65535 \
+  -e MAX_ZMQ_SOCKETS=65535 \
+  -e HF_HOME=/tmp/hf_cache \
+  -e OUTLINES_CACHE_DIR=/tmp/outlines \
+  -e XDG_CACHE_HOME=/tmp/cache \
+  -e XDG_CONFIG_HOME=/tmp/config \
   --network host \
   hpc-baseline:production-sm120-vllm0.5.4
