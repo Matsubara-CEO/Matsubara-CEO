@@ -9,9 +9,9 @@
 
 ## Executive Summary
 
-I build **Zero-Cloud-Cost, Air-Gapped Infrastructure** for enterprise engineering teams facing exorbitant cloud memory costs, AWS OOM (Out Of Memory) pipeline crashes, and strict HIPAA/GDPR privacy constraints[cite: 28, 31].
+I build **Zero-Cloud-Cost, Air-Gapped Infrastructure** for enterprise engineering teams facing exorbitant cloud memory costs, AWS OOM (Out Of Memory) pipeline crashes, and strict HIPAA/GDPR privacy constraints.
 
-I do not host your sensitive data[cite: 28]. I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or on-premises HPC environments[cite: 28].
+I do not host your sensitive data. I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or on-premises HPC environments.
 
 ---
 
@@ -59,15 +59,15 @@ The following deterministic metrics were benchmarked and verified under a contin
 | **Batch Error Rate** | **0.00% (0 Failed Requests)** | Atomic 2-Phase Commit & WAL Checkpointing |
 | **Host Memory Lock** | **6.7GiB – 9.4GB (O(1) Bounded)** | `libjemalloc2` + Polars Chunked Streaming |
 | **Swap Memory Usage** | **0 Bytes (0B)** | Memory fragmentation eradication via `MALLOC_CONF` |
-| **Data Integrity Verification** | **`PRAGMA integrity_check: ok`** | 3.4GB SQLite WAL State Engine Audit[cite: 31] |
-| **Cloud Compute Cost** | **$0.00 (Zero Cloud Recurring)** | On-Premises Local HPC Execution[cite: 28, 31] |
+| **Data Integrity Verification** | **`PRAGMA integrity_check: ok`** | 3.4GB SQLite WAL State Engine Audit |
+| **Cloud Compute Cost** | **$0.00 (Zero Cloud Recurring)** | On-Premises Local HPC Execution |
 
 ---
 
 ## Architectural Evidence & Reproducibility Snippets
 
 ### 1. Eradicating Memory Fragmentation (`libjemalloc2` Dynamic Linker Injection)
-Standard `glibc malloc` causes severe memory allocation fragmentation during high-throughput parallel data streaming[cite: 31]. The following runtime environment variables force immediate page purging back to the kernel[cite: 31]:
+Standard `glibc malloc` causes severe memory allocation fragmentation during high-throughput parallel data streaming. The following runtime environment variables force immediate page purging back to the kernel:
 
 ```bash
 # Production Container Runtime Parameters
