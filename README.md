@@ -1,9 +1,9 @@
 # Shota Matsubara | Air-Gapped AI & Data Infrastructure Architect
 
-[![Upwork Profile](https://img.shields.io/badge/Upwork-Available%20for%20Contract-green?style=for-the-badge&logo=upwork)](https://www.linkedin.com/in/shota-matsubara-hpc/)
-[![Infrastructure](https://img.shields.io/badge/Architecture-Air--Gapped%20%7C%20Zero--Cloud--Cost-blue?style=for-the-badge)](https://github.com/Matsubara-CEO)
-[![Compliance](https://img.shields.io/badge/Compliance-HIPAA%20%2F%20GDPR%20Ready-red?style=for-the-badge)](https://github.com/Matsubara-CEO)
-[![Benchmark](https://img.shields.io/badge/Memory%20Bounds-O(1)%20Constant%20Space-orange?style=for-the-badge)](https://github.com/Matsubara-CEO)
+[![Upwork Profile](https://img.shields.io/badge/Upwork-AVAILABLE%20FOR%20CONTRACT-green?style=for-the-badge&logo=upwork)](https://www.upwork.com/freelancers/shotamatsubara)
+[![Infrastructure](https://img.shields.io/badge/Architecture-Air--Gapped%20%7C%20Zero--Cloud--Cost-blue?style=for-the-badge)](https://www.linkedin.com/in/shota-matsubara-hpc/)
+[![Compliance](https://img.shields.io/badge/Compliance-HIPAA%20%2F%20GDPR%20READY-red?style=for-the-badge)](https://www.linkedin.com/in/shota-matsubara-hpc/)
+[![Benchmark](https://img.shields.io/badge/Memory%20Bounds-O(1)%20CONSTANT%20SPACE-orange?style=for-the-badge)](#verified-benchmark-results)
 
 ---
 
