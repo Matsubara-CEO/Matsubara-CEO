@@ -88,3 +88,13 @@ docker run -d \
   -e XDG_CONFIG_HOME=/tmp/config \
   --network host \
   hpc-baseline:production-sm120-vllm0.5.4
+```
+  
+---
+## Ready to Deploy?
+
+Eradicate OOM crashes, eliminate exorbitant cloud compute costs, and ensure absolute HIPAA/GDPR compliance with zero data egress.
+
+I deliver this exact **Air-Gapped Infrastructure as Code (IaC)** directly to your local bare-metal or on-premises HPC environments. I do not host your sensitive data; I build the fortress for it to run securely.
+
+[![Upwork: Hire Me](https://img.shields.io/badge/Upwork-Hire_Me_for_a_Fixed--Price_Deployment-6fda44?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/shotamatsubara)
