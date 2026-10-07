@@ -28,7 +28,25 @@ Below is the raw terminal telemetry verifying an asynchronous batch execution pr
 </p>
 
 > **Raw Telemetry Verification:** The left panel demonstrates the 10,000,000 record completion with a 0.00% error rate and `PRAGMA integrity_check: ok`. The right panel displays the host RAM strictly bound to **9.4GB (O(1) constant space)** with **0B Swap** utilization via `libjemalloc2` injection during peak asynchronous processing.
+<br>
+<h3>Dynamic Video Audits (Zero-Trust Proofs)</h3>
 
+<h4>1. OOM Crash Prevention Proof</h4>
+<p>Deterministic proof of legacy in-memory processing fatal failure (Exit 137) contrasted with our constant-space memory bound pipeline.</p>
+<p align="center">
+  <a href="https://youtu.be/BWt1-SOcuJQ">
+    <img src="https://img.youtube.com/vi/BWt1-SOcuJQ/maxresdefault.jpg" alt="OOM Crash Prevention Proof" width="100%">
+  </a>
+</p>
+<br>
+
+<h4>2. Air-Gapped Infrastructure Proof</h4>
+<p>Verification of absolute network isolation (<code>--network none</code>) with zero data egress for strict HIPAA/GDPR compliance.</p>
+<p align="center">
+  <a href="https://youtu.be/NJdSYV3Rt1k">
+    <img src="https://img.youtube.com/vi/NJdSYV3Rt1k/maxresdefault.jpg" alt="Air-Gapped Infrastructure Proof" width="100%">
+  </a>
+</p>
 ---
 
 ## Verified Benchmark Results
