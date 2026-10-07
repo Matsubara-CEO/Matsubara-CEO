@@ -98,3 +98,5 @@ Eradicate OOM crashes, eliminate exorbitant cloud compute costs, and ensure abso
 I deliver this exact **Air-Gapped Infrastructure as Code (IaC)** directly to your local bare-metal or on-premises HPC environments. I do not host your sensitive data; I build the fortress for it to run securely.
 
 [![Upwork: Hire Me](https://img.shields.io/badge/Upwork-Hire_Me_for_a_Fixed--Price_Deployment-6fda44?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/shotamatsubara)
+
+[![LinkedIn: Connect](https://img.shields.io/badge/LinkedIn-Connect_for_B2B_Consulting-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shota-matsubara-hpc/)
