@@ -15,7 +15,7 @@ I do not host your sensitive data. I deliver fully containerized, reproducible I
 
 ---
 
-## Dynamic Telemetry Proof (Zero-OOM Batch Execution)
+## Deterministic Telemetry Proof (Zero-OOM Batch Execution)
 
 Below is the raw terminal telemetry verifying an asynchronous batch execution processing **10,000,000 records** on a 128GB ECC RAM bare-metal workstation without cloud compute charges:
 
@@ -29,7 +29,7 @@ Below is the raw terminal telemetry verifying an asynchronous batch execution pr
 
 > **Raw Telemetry Verification:** The left panel demonstrates the 10,000,000 record completion with a 0.00% error rate and `PRAGMA integrity_check: ok`. The right panel displays the host RAM strictly bound to **9.4GB (O(1) constant space)** with **0B Swap** utilization via `libjemalloc2` injection during peak asynchronous processing.
 <br>
-<h3>Dynamic Video Audits (Zero-Trust Proofs)</h3>
+<h3>Deterministic Video Audits (Zero-Trust Proofs)</h3>
 
 <h4>1. OOM Crash Prevention Proof</h4>
 <p>Deterministic proof of legacy in-memory processing fatal failure (Exit 137) contrasted with our constant-space memory bound pipeline.</p>
@@ -66,7 +66,7 @@ The following deterministic metrics were benchmarked and verified under a contin
 
 ## Architectural Evidence & Reproducibility Snippets
 
-### 1. Eradicating Memory Fragmentation (`libjemalloc2` Dynamic Linker Injection)
+### 1. Eradicating Memory Fragmentation (libjemalloc2 Runtime Linker Injection)
 Standard `glibc malloc` causes severe memory allocation fragmentation during high-throughput parallel data streaming. The following runtime environment variables force immediate page purging back to the kernel:
 
 ```bash
