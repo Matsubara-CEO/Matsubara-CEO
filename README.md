@@ -20,7 +20,6 @@ graph TD
     subgraph Host ["Host Platform (Windows 11 Pro for Workstations / HP Z4 G4)"]
         subgraph PhysicalLayer ["Physical Infrastructure & Security Layer"]
             UPS["OMRON BN150T UPS (15A/1125W Limiter)<br/>Power Limit: nvidia-smi -pl 160"]
-            Plug["TP-Link Tapo P110M<br/>Power & kWh Evidence Logger"]
             AirGap["Air-Gapped Network Boundary<br/>Local Only (127.0.0.1) / No Cloud Egress"]
         end
 
