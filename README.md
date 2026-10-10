@@ -13,6 +13,64 @@ I build **Zero-Cloud-Cost, Air-Gapped Infrastructure** for enterprise engineerin
 
 I do not host your sensitive data. I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or on-premises HPC environments.
 
+## Air-Gapped HPC Architecture
+
+```mermaid
+graph TD
+    subgraph Host ["Host Platform (Windows 11 Pro for Workstations / HP Z4 G4)"]
+        subgraph PhysicalLayer ["Physical Infrastructure & Security Layer"]
+            UPS["OMRON BN150T UPS (15A/1125W Limiter)<br/>Power Limit: nvidia-smi -pl 160"]
+            Plug["TP-Link Tapo P110M<br/>Power & kWh Evidence Logger"]
+            AirGap["Air-Gapped Network Boundary<br/>Local Only (127.0.0.1) / No Cloud Egress"]
+        end
+
+        subgraph WSL2 ["WSL2 Ubuntu Native Environment (100GB RAM / 32GB Swap)"]
+            subgraph Container ["Docker Container (hpc-baseline:production-jemalloc)"]
+                subgraph Pipeline ["Async Processing Pipeline (Python / Polars)"]
+                    Sanitizer["PII/PHI Shredder & Kill Switch<br/>(audit_killswitch.py)"]
+                    Sem["asyncio.Semaphore(256)<br/>Client Backpressure Control"]
+                    Connector["aiohttp.TCPConnector<br/>limit=256, force_close=True"]
+                end
+
+                subgraph vLLMEngine ["vLLM Engine (v0.5.4 / Blackwell sm_120)"]
+                    KV["KV Cache Memory Allocation<br/>--gpu-memory-utilization 0.85"]
+                    Scheduler["Batch Scheduler<br/>--max-num-seqs 256"]
+                end
+            end
+
+            subgraph StorageTier ["Storage Tiering (Zero 9P Protocol / Raw Partition)"]
+                DB[("SQLite WAL State Machine<br/>PRAGMA journal_mode=WAL<br/>Chunk Atomic 2-Phase Commit")]
+                Parquet["Polars Streaming Parquet Sink<br/>O(1) Constant Memory Space"]
+            end
+        end
+    end
+
+    subgraph GPUHardware ["Hardware Accelerator"]
+        RTX5060["NVIDIA GeForce RTX 5060 Ti 16GB VRAM<br/>CUDA_MANAGED_FORCE_DEVICE_ALLOC=1"]
+    end
+
+    subgraph StorageHardware ["Physical Storage"]
+        RawNVMe["Physical ext4 NVMe SSD (Disk 1)<br/>/mnt/data (Physical Mount)"]
+    end
+
+    %% Flow Connections
+    Sanitizer -->|Passed| Sem
+    Sem -->|Control Concurrent Requests| Connector
+    Connector -->|Local HTTP 127.0.0.1:8000| vLLMEngine
+    vLLMEngine <-->|Direct PCIe VRAM Ops| RTX5060
+    Pipeline -->|State Persistence & Resume| DB
+    Pipeline -->|Chunk Direct Stream Write| Parquet
+    DB -->|Zero Fragmentation| RawNVMe
+    Parquet -->|Zero Memory Leak Output| RawNVMe
+
+    %% Styling
+    style Host fill:#1e1e1e,stroke:#333,stroke-width:2px,color:#fff
+    style AirGap fill:#2d3748,stroke:#4a5568,stroke-width:2px,color:#fff
+    style Container fill:#1a202c,stroke:#3182ce,stroke-width:2px,color:#fff
+    style RTX5060 fill:#276749,stroke:#38a169,stroke-width:2px,color:#fff
+    style RawNVMe fill:#744210,stroke:#d69e2e,stroke-width:2px,color:#fff
+    
+```
 ---
 
 ## Deterministic Telemetry Proof (Zero-OOM Batch Execution)
