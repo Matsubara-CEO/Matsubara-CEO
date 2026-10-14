@@ -10,11 +10,16 @@
 
 ## Executive Summary
 
-I design and deliver self-contained, **Zero-Cloud-Cost, Air-Gapped Infrastructure** for enterprise engineering teams facing exorbitant cloud memory bills, AWS OOM (Exit 137) pipeline crashes, and strict HIPAA/GDPR privacy constraints where outbound API traffic is prohibited.
+I design and deliver self-contained, Zero-Cloud-Cost, Air-Gapped Infrastructure for enterprise engineering teams facing exorbitant cloud compute bills, AWS Out-Of-Memory (Exit 137) crashes, and strict HIPAA/GDPR constraints where outbound API traffic is prohibited.
 
-All delivered infrastructures run with `--network none` flags, zero external API calls, and zero cloud dependency. Systems are pre-tested on an enterprise bare-metal workstation (HP Z4 G4: Intel Xeon W-2155, 128GB ECC RDIMM, RTX 5060 Ti 16GB) to guarantee zero memory fragmentation, strict O(1) RAM allocation, and 0.00% data loss under hardware failure.
+All delivered infrastructures run with `--network none` flags, zero external API calls, and zero cloud dependency. I do not host your sensitive data; I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or on-premises HPC environments on a fixed-price basis.
 
-I do not host your sensitive data. I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or on-premises HPC environments.
+### Verified Bare-Metal Benchmarks
+Tested on dedicated enterprise bare metal (HP Z4 G4: Intel Xeon W-2155, 128GB DDR4-2666 ECC RDIMM, RTX 5060 Ti 16GB):
+- **10M Batch Throughput**: 10,000,000 inference records completed in 10.9 hours (~254.9 req/s) with a 0.00% error rate (10,000,000 / 10,000,000 success).
+- **O(1) Constant Memory Clamping**: Host RAM strictly locked between 6.7GiB and 9.4GiB (0B swap) via `LD_PRELOAD` libjemalloc2 dirty page purging and Polars chunked streaming (`sink_parquet`).
+- **Crash-Resilient State Engine**: 3.4GB SQLite WAL 2-phase commit checkpoints (`PRAGMA integrity_check: ok`), providing deterministic resume without data corruption across hard SIGKILL events.
+- **Cryptographic Provenance**: Commits hardware-signed via YubiKey 5C NFC (ED25519-SK) with verifiable SHA-256 telemetry manifests.
 
 ---
 
