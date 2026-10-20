@@ -1,6 +1,7 @@
 # Shota Matsubara | Zero-Cloud-Cost Data Architect
 
 [![UPWORK](https://img.shields.io/badge/UPWORK-AVAILABLE%20FOR%20CONTRACT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
+[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-B2B%20CONSULTING-0077b5)](https://www.linkedin.com/in/shota-matsubara-hpc/)
 [![YOUTUBE](https://img.shields.io/badge/YOUTUBE-4K%20PHYSICAL%20PROOFS-red)](https://www.youtube.com/@air-gapped-architect-shota)
 [![ARCHITECTURE](https://img.shields.io/badge/ARCHITECTURE-AIR--GAPPED%20%7C%20ZERO--CLOUD--COST-blue)](#air-gapped-hpc-architecture)
 [![COMPLIANCE](https://img.shields.io/badge/COMPLIANCE-ZERO--PHI%20%7C%20PUBLIC%20DATA%20ONLY-blue)](#executive-summary)
