@@ -1,75 +1,93 @@
-# Shota Matsubara | Air-Gapped Infrastructure Architect
+# Shota Matsubara | Zero-Cloud-Cost Data Architect
 
-[![Upwork Profile](https://img.shields.io/badge/Upwork-AVAILABLE%20FOR%20CONTRACT-green?style=for-the-badge&logo=upwork)](https://www.upwork.com/freelancers/shotamatsubara)
-[![YouTube Proofs](https://img.shields.io/badge/YouTube-4K%20Physical%20Proofs-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@air-gapped-architect-shota)
-[![Infrastructure](https://img.shields.io/badge/Architecture-Air--Gapped%20%7C%20Zero--Cloud--Cost-blue?style=for-the-badge)](https://www.linkedin.com/in/shota-matsubara-hpc/)
-[![Compliance](https://img.shields.io/badge/Compliance-HIPAA%20%2F%20GDPR%20READY-critical?style=for-the-badge)](https://www.linkedin.com/in/shota-matsubara-hpc/)
-[![Benchmark](https://img.shields.io/badge/Memory%20Bounds-O(1)%20CONSTANT%20SPACE-orange?style=for-the-badge)](#verified-benchmark-results)
+[![UPWORK](https://img.shields.io/badge/UPWORK-AVAILABLE%20FOR%20CONTRACT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
+[![YOUTUBE](https://img.shields.io/badge/YOUTUBE-4K%20PHYSICAL%20PROOFS-red)](https://www.youtube.com/@air-gapped-architect-shota)
+[![ARCHITECTURE](https://img.shields.io/badge/ARCHITECTURE-AIR--GAPPED%20%7C%20ZERO--CLOUD--COST-blue)](#air-gapped-hpc-architecture)
+[![COMPLIANCE](https://img.shields.io/badge/COMPLIANCE-ZERO--PHI%20%7C%20PUBLIC%20DATA%20ONLY-blue)](#executive-summary)
+[![MEMORY BOUNDS](https://img.shields.io/badge/MEMORY%20BOUNDS-O(1)%20CONSTANT%20SPACE-orange)](#verified-bare-metal-benchmarks)
 
 ---
 
 ## Executive Summary
 
-I design and deliver self-contained, Zero-Cloud-Cost, Air-Gapped Infrastructure for enterprise engineering teams facing exorbitant cloud compute bills, AWS Out-Of-Memory (Exit 137) crashes, and strict HIPAA/GDPR constraints where outbound API traffic is prohibited.
+Specializing in Public Datasets & Zero-PHI Architectures (HIPAA-Exempt by Design).
+I do not handle private patient health records (PHI) or unmasked PII. All data pipelines process public, de-identified, or synthetic datasets.
 
-All delivered infrastructures run with `--network none` flags, zero external API calls, and zero cloud dependency. I do not host your sensitive data; I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or on-premises HPC environments on a fixed-price basis.
+I eliminate exorbitant cloud compute bills (Snowflake, BigQuery, AWS) and Out-Of-Memory (Exit 137) crashes for engineering teams by deploying deterministic, zero-cloud-cost pipelines on dedicated bare-metal infrastructure (128GB ECC RAM).
 
-### Verified Bare-Metal Benchmarks
-Tested on dedicated enterprise bare metal (HP Z4 G4: Intel Xeon W-2155, 128GB DDR4-2666 ECC RDIMM, RTX 5060 Ti 16GB):
-- **10M Batch Throughput**: 10,000,000 inference records completed in 10.9 hours (~254.9 req/s) with a 0.00% error rate (10,000,000 / 10,000,000 success).
+All delivered infrastructures run with `--network none` flags, zero external API calls, and zero cloud dependency. I do not host your sensitive data; I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or private VPC on a fixed-price basis.
+
+## Verified Bare-Metal Benchmarks
+
+Tested on dedicated enterprise bare-metal (HP Z4 G4: Intel Xeon W-2155, 128GB DDR4-2666 ECC RDIMM, ASUS RTX 5060 Ti 16GB):
+
+- **10M Batch Throughput**: 10,000,000 inference records completed in 10.9 hours (~254.9 req/s) with a 0.00% error rate (10,000,000 / 10,000,000 success across consecutive runs).
 - **O(1) Constant Memory Clamping**: Host RAM strictly locked between 6.7GiB and 9.4GiB (0B swap) via `LD_PRELOAD` libjemalloc2 dirty page purging and Polars chunked streaming (`sink_parquet`).
 - **Crash-Resilient State Engine**: 3.4GB SQLite WAL 2-phase commit checkpoints (`PRAGMA integrity_check: ok`), providing deterministic resume without data corruption across hard SIGKILL events.
 - **Cryptographic Provenance**: Commits hardware-signed via YubiKey 5C NFC (ED25519-SK) with verifiable SHA-256 telemetry manifests.
+
+## Core Engineering Capabilities
+
+1. **Zero-Cloud-Cost & Extreme Local Throughput**: Ingest, parse, and aggregate massive semi-structured files (JSON, CSV, Parquet) on 128GB ECC RAM using Polars and DuckDB without cloud cluster overhead.
+2. **Mathematical Data Purifying & Noise Stripping**: Surgically isolate fee-schedule anomalies, corrupted records, and outlier noise in complex domain registries to match industry benchmarks.
+3. **Full-Stack Boundary Diagnostics**: Root-cause latency spikes and data mismatches across decoupled web frontends (Next.js) and static object storage shards (Supabase/S3) to eliminate database IOPS saturation.
+4. **Legacy Codebase Rescue & Surgical Hotfixing**: Reverse-engineer undocumented, broken repositories and CLI tools to deliver minimal, targeted patches that restore production stability immediately.
+5. **Zero-Regression & Contract Invariance**: Upgrade internal calculation logic while maintaining 100% backward compatibility, validated by 50+ automated regression tests completing in seconds.
+6. **Cryptographic Provenance**: 100% of Git commits and IaC deliverables are hardware-signed via YubiKey 5C NFC (ED25519-SK) with SHA-256 checksum manifests.
+7. **Asynchronous Technical Governance**: 100% written-only execution. All pull requests, root-cause logs, and architectural decisions are delivered asynchronously without recurring meetings.
 
 ---
 
 ## Air-Gapped HPC Architecture
 
 ```mermaid
-graph TD
-subgraph Host ["Host Platform: Windows 11 Pro for Workstations - HP Z4 G4"]
-subgraph PhysicalLayer ["Physical Infrastructure and Security Layer"]
-UPS["OMRON BN150T UPS 15A 1125W Limiter<br/>Power Limit: nvidia-smi -pl 160"]
-AirGap["Air-Gapped Network Boundary<br/>Local Only 127.0.0.1 - No Cloud Egress"]
-end
-subgraph WSL2 ["WSL2 Ubuntu Native Environment: 100GB RAM - 32GB Swap"]
-subgraph Container ["Docker Container: hpc-baseline production-jemalloc"]
-subgraph Pipeline ["Async Processing Pipeline: Python and Polars"]
-Sanitizer["PII PHI Shredder and Kill Switch<br/>audit_killswitch.py"]
-Sem["asyncio.Semaphore 256<br/>Client Backpressure Control"]
-Connector["aiohttp.TCPConnector<br/>limit=256, force_close=True"]
-end
-subgraph vLLMEngine ["vLLM Engine: v0.5.4 - Blackwell sm_120"]
-KV["KV Cache Memory Allocation<br/>--gpu-memory-utilization 0.85"]
-Scheduler["Batch Scheduler<br/>--max-num-seqs 256"]
-end
-end
-subgraph StorageTier ["Storage Tiering: Zero 9P Protocol - Raw Partition"]
-DB[("SQLite WAL State Machine<br/>PRAGMA journal_mode=WAL<br/>Chunk Atomic 2-Phase Commit")]
-Parquet["Polars Streaming Parquet Sink<br/>O(1) Constant Memory Space"]
-end
-end
-end
-subgraph GPUHardware ["Hardware Accelerator"]
-RTX5060["NVIDIA GeForce RTX 5060 Ti 16GB VRAM<br/>CUDA_MANAGED_FORCE_DEVICE_ALLOC=1"]
-end
-subgraph StorageHardware ["Physical Storage"]
-RawNVMe["Physical ext4 NVMe SSD Disk 1<br/>/mnt/data Physical Mount"]
-end
-Sanitizer -->|Passed| Sem
-Sem -->|Control Concurrent Requests| Connector
-Connector -->|Local HTTP 127.0.0.1:8000| vLLMEngine
-vLLMEngine <-->|Direct PCIe VRAM Ops| RTX5060
-Pipeline -->|State Persistence and Resume| DB
-Pipeline -->|Chunk Direct Stream Write| Parquet
-DB -->|Zero Fragmentation| RawNVMe
-Parquet -->|Zero Memory Leak Output| RawNVMe
-style Host fill:#1e1e1e,stroke:#333,stroke-width:2px,color:#fff
-style AirGap fill:#2d3748,stroke:#4a5568,stroke-width:2px,color:#fff
-style Container fill:#1a202c,stroke:#3182ce,stroke-width:2px,color:#fff
-style RTX5060 fill:#276749,stroke:#38a169,stroke-width:2px,color:#fff
-style RawNVMe fill:#744210,stroke:#d69e2e,stroke-width:2px,color:#fff
-```
+flowchart TD
+    subgraph Host ["Host Platform: Windows 11 Pro for Workstations - HP Z4 G4"]
+        subgraph WSL ["WSL2 Ubuntu Native Environment: 100GB RAM - 32GB Swap"]
+            subgraph Docker ["Docker Container: hpc-baseline:production-jemalloc"]
+                subgraph Pipeline ["Async Processing Pipeline: Python and Polars"]
+                    Filter["PII PHI Shredder and Kill Switch<br/>audit_killswitch.py"]
+                    Queue["asyncio.Semaphore<br/>256 Client Backpressure Control"]
+                    Connector["aiohttp.TCPConnector<br/>limit=256, force_close=True"]
+                    
+                    Filter -->|Passed| Queue
+                    Queue -->|Control Concurrent Requests| Connector
+                end
+                
+                subgraph Engine ["vLLM Engine: v0.5.4 - Blackwell sm_120"]
+                    KVCache["KV Cache Memory Allocation<br/>--gpu-memory-utilization 0.85"]
+                    Scheduler["Batch Scheduler<br/>--max-num-seqs 256"]
+                end
+                
+                Connector <-->|Local HTTP 127.0.0.1:8000| Engine
+            end
+            
+            subgraph Storage ["Storage Tiering: Zero 9P Protocol - Raw Partition"]
+                SQLite["SQLite WAL State Machine<br/>PRAGMA journal_mode=WAL<br/>Chunk Atomic 2-Phase Commit"]
+                Polars["Polars Streaming<br/>Parquet Sink<br/>O(1) Constant Memory Space"]
+            end
+            
+            Pipeline -->|State Persistence and Resume| SQLite
+            Pipeline -->|Chunk Direct Stream Write| Polars
+        end
+        
+        subgraph SecLayer ["Physical Infrastructure and Security Layer"]
+            Power["OMRON BN150T UPS 15A 1125W Limiter<br/>Power Limit: nvidia-smi -pl 160"]
+            AirGap["Air-Gapped Network Boundary<br/>Local Only 127.0.0.1 - No Cloud Egress"]
+        end
+        
+        subgraph Hardware ["Hardware Accelerator"]
+            GPU["NVIDIA GeForce RTX 5060 Ti 16GB<br/>CUDA_MANAGED_FORCE_DEVICE_ALLOC=1"]
+        end
+        
+        subgraph NVMe ["Physical Storage"]
+            RawDisk["Physical disk ext4<br/>Raw Disk 1 /mnt/data<br/>Physical Mount"]
+        end
+        
+        Engine -->|Direct PCIe VRAM Ops| GPU
+        Storage -->|Zero Fragmentation| RawDisk
+        Docker -->|Zero Memory Leak Output| WSL
+    end
 
 ---
 
