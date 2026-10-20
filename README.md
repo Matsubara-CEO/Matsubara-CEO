@@ -204,5 +204,5 @@ Eradicate OOM crashes, eliminate exorbitant cloud compute bills, and process ext
 
 I deliver this exact Zero-Cloud-Cost Infrastructure as Code (IaC) directly to your local bare-metal or private VPC environments. I do not host your data; I build the infrastructure for it to run securely on your premises.
 
-[![UPWORK](https://img.shields.io/badge/UPWORK-HIRE%20ME%20FOR%20A%20FIXED--PRICE%20DEPLOYMENT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
-[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-CONNECT%20FOR%20B2B%20CONSULTING-blue)](https://www.linkedin.com/in/shota-matsubara-hpc/)
+[![Upwork](https://img.shields.io/badge/Upwork-Hire_Me_for_a_Fixed--Price_Deployment-6fda44?logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/shotamatsubara)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect_for_B2B_Consulting-0077b5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shota-matsubara-hpc/)
