@@ -200,10 +200,9 @@ PRAGMA integrity_check;
 ---
 ## Ready to Deploy?
 
-Eradicate OOM crashes, eliminate exorbitant cloud compute costs, and ensure absolute HIPAA/GDPR compliance with zero data egress.
+Eradicate OOM crashes, eliminate exorbitant cloud compute bills, and process extreme batch volumes on your own infrastructure with zero cloud egress.
 
-I deliver this exact **Air-Gapped Infrastructure as Code (IaC)** directly to your local bare-metal or on-premises HPC environments. I do not host your sensitive data; I build the fortress for it to run securely.
+I deliver this exact Zero-Cloud-Cost Infrastructure as Code (IaC) directly to your local bare-metal or private VPC environments. I do not host your data; I build the infrastructure for it to run securely on your premises.
 
-[![Upwork: Hire Me](https://img.shields.io/badge/Upwork-Hire_Me_for_a_Fixed--Price_Deployment-6fda44?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/shotamatsubara)
-
-[![LinkedIn: Connect](https://img.shields.io/badge/LinkedIn-Connect_for_B2B_Consulting-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shota-matsubara-hpc/)
+[![UPWORK](https://img.shields.io/badge/UPWORK-HIRE%20ME%20FOR%20A%20FIXED--PRICE%20DEPLOYMENT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
+[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-CONNECT%20FOR%20B2B%20CONSULTING-blue)](https://www.linkedin.com/in/shota-matsubara-hpc/)
