@@ -88,7 +88,7 @@ flowchart TD
         Storage -->|Zero Fragmentation| RawDisk
         Docker -->|Zero Memory Leak Output| WSL
     end
-
+```
 ---
 
 ## Bare-Metal Video Audits (Raw 4K 60FPS Zero-Trust Proofs)
