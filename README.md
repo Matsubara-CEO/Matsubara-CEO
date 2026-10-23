@@ -91,6 +91,7 @@ flowchart TD
         Docker -->|Zero Memory Leak Output| WSL
     end
 ```
+
 ---
 
 ## Bare-Metal Video Audits (Raw 4K 60FPS Zero-Trust Proofs)
@@ -140,6 +141,7 @@ Every architectural claim is backed by physical bare-metal video captures on the
     <img src="https://img.youtube.com/vi/lIi2-Gha-NY/hqdefault.jpg" alt="PROOF_Cryptographic_Integrity_Verification" width="100%">
   </a>
 </p>
+
 ---
 
 ## Verified Benchmark Results
@@ -199,8 +201,6 @@ PRAGMA wal_autocheckpoint = 10000;
 -- Post-Crash Audit Query
 PRAGMA integrity_check;
 ```
----
----
 
 ---
 
