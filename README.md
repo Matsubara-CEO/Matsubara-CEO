@@ -1,5 +1,6 @@
 # Shota Matsubara | Zero-Cloud-Cost Data Architect
 
+[![POLAR](https://img.shields.io/badge/POLAR.SH-BUY%20IAC%20BUNDLE%20($1,200)-blue)](https://buy.polar.sh/polar_cl_VUZ9enyIdPvLsFRr3wSMIfDFkIGVNwTo0ZskH3fRZfv)
 [![UPWORK](https://img.shields.io/badge/UPWORK-AVAILABLE%20FOR%20CONTRACT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
 [![LINKEDIN](https://img.shields.io/badge/LINKEDIN-B2B%20CONSULTING-0077b5)](https://www.linkedin.com/in/shota-matsubara-hpc/)
 [![YOUTUBE](https://img.shields.io/badge/YOUTUBE-4K%20PHYSICAL%20PROOFS-red)](https://www.youtube.com/@air-gapped-architect-shota)
@@ -199,11 +200,27 @@ PRAGMA wal_autocheckpoint = 10000;
 PRAGMA integrity_check;
 ```
 ---
+---
+
+---
+
 ## Ready to Deploy?
 
-Eradicate OOM crashes, eliminate exorbitant cloud compute bills, and process extreme batch volumes on your own infrastructure with zero cloud egress.
+We eliminate cloud compute inflation and data breach liabilities by delivering pre-compiled, deterministic batch processing pipelines directly to your private bare-metal or VPC infrastructure.
 
-I deliver this exact Zero-Cloud-Cost Infrastructure as Code (IaC) directly to your local bare-metal or private VPC environments. I do not host your data; I build the infrastructure for it to run securely on your premises.
+### Option 1: Commercial Air-Gapped Docker IaC Bundle ($1,200 USD)
+Instant access to production-tested infrastructure code for self-hosted deployment:
+- Hardened Dockerfile with `--network none` physical network isolation.
+- Pre-configured `libjemalloc2` runtime injection (`dirty_decay_ms:2000`) preventing glibc memory leaks.
+- Polars streaming disk-sink templates and atomic SQLite WAL 2-phase commit state machines.
+- Commercial usage license with zero recurring subscription fees.
 
-[![Upwork](https://img.shields.io/badge/Upwork-Hire_Me_for_a_Fixed--Price_Deployment-6fda44?logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/shotamatsubara)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect_for_B2B_Consulting-0077b5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shota-matsubara-hpc/)
+[Buy & Download IaC Bundle ($1,200 USD)](https://buy.polar.sh/polar_cl_VUZ9enyIdPvLsFRr3wSMIfDFkIGVNwTo0ZskH3fRZfv)
+
+### Option 2: Custom Private Deployment ($1,000 - $5,000 USD Fixed-Price)
+We adapt and deploy the deterministic pipeline into your private cloud boundary under a strictly asynchronous, 100% written-only engagement:
+- Tailored integration for healthcare and enterprise data processing.
+- Full row-count parity verification and SHA-256 integrity logs.
+- Milestone-based escrow contract via Upwork.
+
+[Order on Upwork Project Catalog ($1,000 - $5,000)](https://www.upwork.com/services/product/development-it-zero-cloud-cost-high-throughput-infrastructure-for-extreme-batch-workloads-2102627386625386227?ref=fl_profile)
