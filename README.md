@@ -1,5 +1,6 @@
 # Shota Matsubara | Zero-Cloud-Cost Data Architect
 
+[![Official LP](https://img.shields.io/badge/OFFICIAL%20LP-shotamatsubara.com-blue?style=for-the-badge)](https://shotamatsubara.com)
 [![POLAR](https://img.shields.io/badge/POLAR.SH-BUY%20IAC%20BUNDLE%20($1,200)-blue)](https://buy.polar.sh/polar_cl_VUZ9enyIdPvLsFRr3wSMIfDFkIGVNwTo0ZskH3fRZfv)
 [![UPWORK](https://img.shields.io/badge/UPWORK-AVAILABLE%20FOR%20CONTRACT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
 [![LINKEDIN](https://img.shields.io/badge/LINKEDIN-B2B%20CONSULTING-0077b5)](https://www.linkedin.com/in/shota-matsubara-hpc/)
@@ -224,3 +225,9 @@ We adapt and deploy the deterministic pipeline into your private cloud boundary 
 - Milestone-based escrow contract via Upwork.
 
 [Order on Upwork Project Catalog ($1,000 - $5,000)](https://www.upwork.com/services/product/development-it-zero-cloud-cost-high-throughput-infrastructure-for-extreme-batch-workloads-2102627386625386227?ref=fl_profile)
+
+---
+
+### Official Architectural Hub & Telemetry
+- **Official B2B Architecture LP**: [https://shotamatsubara.com](https://shotamatsubara.com) (10M Deterministic Benchmarks, 8 Live Video Streams, Instant IaC Checkout)
+- **Primary Repository**: [GitHub: Matsubara-CEO](https://github.com/Matsubara-CEO)
