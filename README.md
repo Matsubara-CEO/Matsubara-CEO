@@ -74,10 +74,10 @@ flowchart TD
             Pipeline -->|Chunk Direct Stream Write| Polars
         end
         
-        subgraph SecLayer ["Physical Infrastructure and Security Layer"]
-            Power["OMRON BN150T UPS 15A 1125W Limiter<br/>Power Limit: nvidia-smi -pl 160"]
-            AirGap["Air-Gapped Network Boundary<br/>Local Only 127.0.0.1 - No Cloud Egress"]
-        end
+　　　　　subgraph SecLayer ["Physical Infrastructure and Security Layer"]
+     　　　　Power["OMRON BN150T UPS (15A / 1125W Limiter)<br/>Power Limit: nvidia-smi -pl 160<br/>Daemon: PowerAttendant (10-min Safe Window)"]
+      　　  AirGap["Air-Gapped Network Boundary<br/>Local Only 127.0.0.1 - No Cloud Egress"]
+    　　end
         
         subgraph Hardware ["Hardware Accelerator"]
             GPU["NVIDIA GeForce RTX 5060 Ti 16GB<br/>CUDA_MANAGED_FORCE_DEVICE_ALLOC=1"]
