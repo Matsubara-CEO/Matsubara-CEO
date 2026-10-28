@@ -209,25 +209,38 @@ PRAGMA integrity_check;
 
 We eliminate cloud compute inflation and data breach liabilities by delivering pre-compiled, deterministic batch processing pipelines directly to your private bare-metal or VPC infrastructure.
 
-### Option 1: Commercial Air-Gapped Docker IaC Bundle ($1,200 USD)
-Instant access to production-tested infrastructure code for self-hosted deployment:
-- Hardened Dockerfile with `--network none` physical network isolation.
-- Pre-configured `libjemalloc2` runtime injection (`dirty_decay_ms:2000`) preventing glibc memory leaks.
-- Polars streaming disk-sink templates and atomic SQLite WAL 2-phase commit state machines.
-- Commercial usage license with zero recurring subscription fees.
+All production container images enforce strict `O(1)` constant memory bounds (host RAM clamped between 6.7GiB and 9.4GiB via `libjemalloc2` runtime injection) and run under Docker flag `--network none` for absolute air-gapped isolation.
 
-[Buy & Download IaC Bundle ($1,200 USD)](https://buy.polar.sh/polar_cl_VUZ9enyIdPvLsFRr3wSMIfDFkIGVNwTo0ZskH3fRZfv)
+### Production Container Engines & Commercial Licenses
 
-### Option 2: Custom Private Deployment ($1,000 - $5,000 USD Fixed-Price)
-We adapt and deploy the deterministic pipeline into your private cloud boundary under a strictly asynchronous, 100% written-only engagement:
-- Tailored integration for healthcare and enterprise data processing.
-- Full row-count parity verification and SHA-256 integrity logs.
-- Milestone-based escrow contract via Upwork.
+| Product / Engine | Primary Focus | Technical Architecture | Canonical SHA-256 Hash | Pricing & Checkout |
+| :--- | :--- | :--- | :--- | :--- |
+| **Air-Gapped HPC Base IaC Bundle** | Base Docker IaC Framework | `libjemalloc2` dirty page purging, Polars streaming templates, SQLite WAL 2PC state engine. | `1CB70C60C14C83CDD0AE799567D5CAFCF0E103B36CA7A3C29C775837689BB2FB` | [**Purchase ($1,200 USD)**](https://polar.sh/checkout/polar_c_5IJQtkuGRd1fmr1s3it1aQcWqtzfV1Sa553UZ0TwkhK) |
+| **GeoStream-Parquet Engine v1.0.0** | ASPRS LAS 1.4/LAZ to Uber H3 GeoParquet | O(1) 9.4GiB RAM ceiling on 100GB+ 3D point clouds. 10M records processed in 10.9h at 0.00% error rate. | `281e07482d51dd4a195726c845deb6584f247e77e045c5bee11d187ae4ee0c0d` | [**Purchase ($1,800 USD)**](https://buy.polar.sh/polar_cl_Xzj1yyC6t5Xh6iDy1cf7odEVmOBPxClhSnrvI1Z68Bj) |
+| **NetForensic-Core v1.0.0** | PCAP/PCAPNG 5-Tuple Extraction | L3/L4 packet streaming parser. Extracts 8 5-tuple columns to normalized Parquet without glibc memory leaks. | `5203e2885b9d87e8dbd68cbcc01425c6351d8ff03caee9beeb77ae7657b3ab54` | [**Purchase ($1,800 USD)**](https://buy.polar.sh/polar_cl_PDU5vVPDdyrQuXBwGdLm6mM2XfB10TTxvA7ze3aMeS3) |
+| **MDF4-Parquet Engine v1.0.0** | ASAM MDF4 High-Freq Telemetry | Out-of-core 128MB chunk streaming (`iter_to_dataframe`). Eliminates Exit 137 OOM on automotive ECU logs. | `cb1b15827908a94d2bc06fcde823e8c8feb4be2b3cac4d891d3dc8aa969b551a` | [**Purchase ($2,500 USD)**](https://buy.polar.sh/polar_cl_Pp43kjfUkophrVuuXx8jaS0IFh1RBWgbtlFXq0Eei7D) |
+| **SeisParquet-Core v1.0.0** | SEG-Y Seismic Reflection Binary | NumPy 2D zero-copy vectorization. Extracts 9 trace header/sample columns to Parquet under O(1) RAM. | `0441bb4ff617b76ee55992e5bf0d6dc816bff8fbc2337e52b3968487c03d1f48` | [**Purchase ($2,800 USD)**](https://buy.polar.sh/polar_cl_H0B1ZerOs1jAcivd2vOBlfXmQMqnITRZEftAV21BxIK) |
+| **BioBAM-Streamer v1.0.0** | Genomic BAM/CRAM Alignments | `pysam` chunked streaming parser. Zero-PHI / HIPAA-Exempt design for 100GB+ WGS data processing. | `ef7a29f12ec6cad14c9824a1526c80e93d46542841390a4f375f74bed68b547c` | [**Purchase ($3,000 USD)**](https://polar.sh/checkout/polar_c_YKDt0RHk9BKZ5NhO8ilg6ozUJ1ewUGLiyblnR01YbQ3) |
 
-[Order on Upwork Project Catalog ($1,000 - $5,000)](https://www.upwork.com/services/product/development-it-zero-cloud-cost-high-throughput-infrastructure-for-extreme-batch-workloads-2102627386625386227?ref=fl_profile)
+* Instant digital delivery via Polar Software, Inc. (Merchant of Record). Tax-compliant corporate invoices generated automatically upon payment.
 
 ---
 
-### Official Architectural Hub & Telemetry
-- **Official B2B Architecture LP**: [https://shotamatsubara.com](https://shotamatsubara.com) (10M Deterministic Benchmarks, 8 Live Video Streams, Instant IaC Checkout)
-- **Primary Repository**: [GitHub: Matsubara-CEO](https://github.com/Matsubara-CEO)
+### Custom Private Deployment & Integration ($1,000 - $5,000 USD Fixed-Price)
+
+We adapt, optimize, and deploy these deterministic pipelines into your private VPC or bare-metal infrastructure under strict asynchronous, 100% written-only engagements.
+
+- **Tailored Integration:** Customized parsers for proprietary binary formats and specialized database targets.
+- **Verification Audit:** Full row-count parity checks, integrity validation, and SHA-256 telemetry verification logs.
+- **Escrow Contract Protection:** All custom engagements are executed via milestone-based escrow contracts on Upwork.
+
+[**Order Project via Upwork Catalog ($1,000 - $5,000 USD)**](https://www.upwork.com/freelancers/shotamatsubara)
+
+---
+
+### Legal Notice & Liability Cap
+All commercial bundles and container artifacts are provided strictly **AS-IS** under Uniform Commercial Code (UCC) Section 2-316. Implied warranties of merchantability and fitness for a particular purpose are disclaimed. Liability for any claims, damages, or losses is strictly capped at the purchase price received for the specific license. We do not collect, process, or transmit your proprietary data (`--network none`). Review the `DISCLAIMER.md` file included in each distribution zip archive.
+
+### Official Architecture Hub & Verification Telemetry
+- **Official B2B Architecture LP:** [shotamatsubara.com](https://shotamatsubara.com) *(10M Deterministic Benchmarks, 8 Live Video Vault Streams)*
+- **Primary Code Repository:** [GitHub Hub: Matsubara-CEO](https://github.com/Matsubara-CEO)
