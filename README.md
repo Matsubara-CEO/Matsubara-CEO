@@ -1,43 +1,42 @@
 # Shota Matsubara | Zero-Cloud-Cost Data Architect
 
-[![Official LP](https://img.shields.io/badge/OFFICIAL%20LP-shotamatsubara.com-blue?style=for-the-badge)](https://shotamatsubara.com)
-[![POLAR](https://img.shields.io/badge/POLAR.SH-BUY%20IAC%20BUNDLE%20($1,200)-blue)](https://buy.polar.sh/polar_cl_VUZ9enyIdPvLsFRr3wSMIfDFkIGVNwTo0ZskH3fRZfv)
-[![UPWORK](https://img.shields.io/badge/UPWORK-AVAILABLE%20FOR%20CONTRACT-brightgreen)](https://www.upwork.com/freelancers/shotamatsubara)
-[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-B2B%20CONSULTING-0077b5)](https://www.linkedin.com/in/shota-matsubara-hpc/)
-[![YOUTUBE](https://img.shields.io/badge/YOUTUBE-4K%20PHYSICAL%20PROOFS-red)](https://www.youtube.com/@air-gapped-architect-shota)
-[![ARCHITECTURE](https://img.shields.io/badge/ARCHITECTURE-AIR--GAPPED%20%7C%20ZERO--CLOUD--COST-blue)](#air-gapped-hpc-architecture)
-[![COMPLIANCE](https://img.shields.io/badge/COMPLIANCE-ZERO--PHI%20%7C%20PUBLIC%20DATA%20ONLY-blue)](#executive-summary)
-[![MEMORY BOUNDS](https://img.shields.io/badge/MEMORY%20BOUNDS-O(1)%20CONSTANT%20SPACE-orange)](#verified-bare-metal-benchmarks)
+[![Official LP](https://img.shields.io/badge/OFFICIAL_LP-SHOTAMATSUBARA.COM-blue?style=for-the-badge)](https://shotamatsubara.com)
+[![Upwork Profile](https://img.shields.io/badge/UPWORK-AVAILABLE_FOR_CONTRACT-green?style=for-the-badge)](https://www.upwork.com/freelancers/shotamatsubara)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-FOR_CONSULTING-0A66C2?style=for-the-badge)](https://www.linkedin.com/in/shota-matsubara-hpc/)
+[![GitHub Hub](https://img.shields.io/badge/GITHUB-MATSUBARA--CEO-black?style=for-the-badge)](https://github.com/Matsubara-CEO)
 
----
+[![Air-Gapped](https://img.shields.io/badge/COMPLIANCE-AIR--GAPPED-black?style=flat-square)](#)
+[![Zero-Cloud-Cost](https://img.shields.io/badge/INFRASTRUCTURE-ZERO--CLOUD--COST-brightgreen?style=flat-square)](#)
+[![Zero-PHI](https://img.shields.io/badge/DATA_PRIVACY-ZERO--PHI_&_PUBLIC_DATA_ONLY-orange?style=flat-square)](#)
+[![O(1) Memory Clamped](https://img.shields.io/badge/MEMORY_BOUND-O(1)_CONSTANT_SPACE-red?style=flat-square)](#)
 
 ## Executive Summary
 
-Specializing in Public Datasets & Zero-PHI Architectures (HIPAA-Exempt by Design).
-I do not handle private patient health records (PHI) or unmasked PII. All data pipelines process public, de-identified, or synthetic datasets.
+Specializing in High-Performance Binary Conversion and Zero-PHI Air-Gapped Infrastructures. I design and deliver specialized, self-hosted Docker container engines that eliminate Out-Of-Memory (Exit 137) crashes and cloud compute inflation (AWS, Snowflake, Databricks).
 
-I eliminate exorbitant cloud compute bills (Snowflake, BigQuery, AWS) and Out-Of-Memory (Exit 137) crashes for engineering teams by deploying deterministic, zero-cloud-cost pipelines on dedicated bare-metal infrastructure (128GB ECC RAM).
+Our core engines convert massive enterprise binary formats—**ASPRS LAS/LAZ (Geospatial 3D), PCAP/PCAPNG (Network Security), ASAM MDF4 (Automotive Telemetry), SEG-Y (Geophysics), and Genomic BAM/CRAM (Bioinformatics)**—directly into normalized Parquet data lakes under constant O(1) memory bounds.
 
-All delivered infrastructures run with `--network none` flags, zero external API calls, and zero cloud dependency. I do not host your sensitive data; I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your local bare-metal or private VPC on a fixed-price basis.
+All delivered infrastructures run with strict `--network none` flags, zero external API calls, and zero cloud dependency. I do not host or store your sensitive data; I deliver fully containerized, reproducible Infrastructure as Code (IaC) directly to your private bare-metal or private VPC on a fixed-price basis.
 
 ## Verified Bare-Metal Benchmarks
 
 Tested on dedicated enterprise bare-metal (HP Z4 G4: Intel Xeon W-2155, 128GB DDR4-2666 ECC RDIMM, ASUS RTX 5060 Ti 16GB):
 
-- **10M Batch Throughput**: 10,000,000 inference records completed in 10.9 hours (~254.9 req/s) with a 0.00% error rate (10,000,000 / 10,000,000 success across consecutive runs).
-- **O(1) Constant Memory Clamping**: Host RAM strictly locked between 6.7GiB and 9.4GiB (0B swap) via `LD_PRELOAD` libjemalloc2 dirty page purging and Polars chunked streaming (`sink_parquet`).
-- **Crash-Resilient State Engine**: 3.4GB SQLite WAL 2-phase commit checkpoints (`PRAGMA integrity_check: ok`), providing deterministic resume without data corruption across hard SIGKILL events.
-- **Cryptographic Provenance**: Commits hardware-signed via YubiKey 5C NFC (ED25519-SK) with verifiable SHA-256 telemetry manifests.
+- **10M Batch Throughput:** 10,000,000 inference records completed in 10.9 hours (~254.9 req/s) with a 0.00% error rate (10,000,000 / 10,000,000 success across consecutive runs).
+- **O(1) Constant Memory Clamping:** Host RAM strictly locked between 6.7GiB and 9.4GiB (0B swap) via `LD_PRELOAD` `libjemalloc2` dirty page purging and Polars chunked streaming (`sink_parquet`).
+- **Crash-Resilient State Engine:** 3.4GB SQLite WAL 2-phase commit checkpoints (`PRAGMA integrity_check: ok`), providing deterministic resume without data corruption across hard SIGKILL events.
+- **Cryptographic Provenance:** Commits hardware-signed via YubiKey 5C NFC (ED25519-SK) with verifiable SHA-256 telemetry manifests.
 
 ## Core Engineering Capabilities
 
-1. **Zero-Cloud-Cost & Extreme Local Throughput**: Ingest, parse, and aggregate massive semi-structured files (JSON, CSV, Parquet) on 128GB ECC RAM using Polars and DuckDB without cloud cluster overhead.
-2. **Mathematical Data Purifying & Noise Stripping**: Surgically isolate fee-schedule anomalies, corrupted records, and outlier noise in complex domain registries to match industry benchmarks.
-3. **Full-Stack Boundary Diagnostics**: Root-cause latency spikes and data mismatches across decoupled web frontends (Next.js) and static object storage shards (Supabase/S3) to eliminate database IOPS saturation.
-4. **Legacy Codebase Rescue & Surgical Hotfixing**: Reverse-engineer undocumented, broken repositories and CLI tools to deliver minimal, targeted patches that restore production stability immediately.
-5. **Zero-Regression & Contract Invariance**: Upgrade internal calculation logic while maintaining 100% backward compatibility, validated by 50+ automated regression tests completing in seconds.
-6. **Cryptographic Provenance**: 100% of Git commits and IaC deliverables are hardware-signed via YubiKey 5C NFC (ED25519-SK) with SHA-256 checksum manifests.
-7. **Asynchronous Technical Governance**: 100% written-only execution. All pull requests, root-cause logs, and architectural decisions are delivered asynchronously without recurring meetings.
+1. **Multi-Domain Binary to Parquet Ingestion:** Specialized zero-copy vectorization engines converting LAS/LAZ, PCAP, MDF4, SEG-Y, and BAM binaries directly to Parquet lakes under O(1) RAM bounds.
+2. **Zero-Cloud-Cost & Extreme Local Throughput:** Ingest, parse, and aggregate massive semi-structured files on 128GB ECC RAM using Polars and DuckDB without cloud cluster overhead.
+3. **Mathematical Data Purifying & Noise Stripping:** Surgically isolate fee-schedule anomalies, corrupted records, and outlier noise in complex domain registries to match industry benchmarks.
+4. **Full-Stack Boundary Diagnostics:** Root-cause latency spikes and data mismatches across decoupled web frontends (Next.js) and static object storage shards (Supabase/S3) to eliminate database IOPS saturation.
+5. **Legacy Codebase Rescue & Hotfixing:** Reverse-engineer undocumented, broken repositories and CLI tools to deliver minimal, targeted patches that restore production stability immediately.
+6. **Zero-Regression & Contract Invariance:** Upgrade internal calculation logic while maintaining 100% backward compatibility, validated by 50+ automated regression tests completing in seconds.
+7. **Cryptographic Provenance:** 100% of Git commits and IaC deliverables are hardware-signed via YubiKey 5C NFC (ED25519-SK) with SHA-256 checksum manifests.
+8. **Asynchronous Technical Governance:** 100% written-only execution. All pull requests, root-cause logs, and architectural decisions are delivered asynchronously without recurring meetings.
 
 ---
 
