@@ -225,6 +225,24 @@ All production container images enforce strict `O(1)` constant memory bounds (ho
 
 ---
 
+### Free 1-File Test Conversion (Proof of Value / PoV)
+
+If your data pipeline is currently crashing due to Out-of-Memory (OOM / Exit 137) errors on large binary files (10GB to 100GB+), we offer a zero-cost deterministic validation service prior to license acquisition.
+
+#### How to Request a Free Benchmark Run:
+1. Prepare one non-sensitive, representative sample file (LAS/LAZ, PCAP, MDF4, SEG-Y, or BAM).
+2. Submit the sample link via [GitHub Issues](https://github.com/Matsubara-CEO/Matsubara-CEO/issues) or direct email to `shota@shotamatsubara.com`.
+3. Within 10 minutes of receipt, our 128GB HPC bare-metal sandbox runs `pov_runner.py` under strict `--network none` isolation.
+4. You will receive an official **PoV Benchmark Certificate** detailing:
+   - Absolute conversion time and Zstd compression ratio.
+   - Cryptographic SHA-256 verification of output GeoParquet/Parquet artifacts.
+   - Host RAM ceiling metrics (proven locked below 9.4GiB with 0.00% error rate).
+   - Full scan readback query latency (typically sub-35ms).
+
+Once you verify the performance metrics on your own sample data, you can proceed directly to the Polar.sh purchase or open a fixed-price custom integration request on Upwork.
+
+---
+
 ### Custom Private Deployment & Integration ($1,000 - $5,000 USD Fixed-Price)
 
 We adapt, optimize, and deploy these deterministic pipelines into your private VPC or bare-metal infrastructure under strict asynchronous, 100% written-only engagements.
