@@ -251,7 +251,7 @@ We adapt, optimize, and deploy these deterministic pipelines into your private V
 - **Verification Audit:** Full row-count parity checks, integrity validation, and SHA-256 telemetry verification logs.
 - **Escrow Contract Protection:** All custom engagements are executed via milestone-based escrow contracts on Upwork.
 
-[**Order Project via Upwork Catalog ($1,000 - $5,000 USD)**](https://www.upwork.com/freelancers/shotamatsubara)
+[**Order Project via Upwork Catalog ($1,000 - $5,000 USD)**](https://www.upwork.com/services/product/development-it-zero-cloud-cost-high-throughput-infrastructure-for-extreme-batch-workloads-2102627386625386227?ref=fl_profile)
 
 ---
 
