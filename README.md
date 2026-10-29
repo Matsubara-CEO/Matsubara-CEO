@@ -163,11 +163,10 @@ The following deterministic metrics were benchmarked and verified under continuo
 ## Architectural Evidence & Reproducibility Snippets
 
 ### 1. Eradicating Memory Fragmentation (libjemalloc2 Runtime Linker Injection)
-Standard `glibc malloc` causes severe memory allocation fragmentation during high-throughput parallel data streaming. The following runtime environment variables force immediate page purging back to the kernel:
+
+Standard `glibc malloc` causes severe memory allocation fragmentation during high-throughput parallel data streaming. The following production environment flags force immediate page purging back to the host kernel while maintaining strict non-root security boundaries:
 
 ```bash
-# Production Container Runtime Parameters
-# TODO: fix this later if scaling above 256 concurrent sequences on dual-socket nodes
 docker run -d \
   --name airgapped-vllm-engine \
   --memory="90g" \
@@ -175,6 +174,9 @@ docker run -d \
   --ipc=host \
   --ulimit nofile=1048576:1048576 \
   --tmpfs /tmp:rw,exec,nosuid,size=20g \
+  --user $(id -u):$(id -g) \
+  -v /etc/passwd:/etc/passwd:ro \
+  -v /etc/group:/etc/group:ro \
   -v /usr/lib/wsl/lib:/usr/lib/wsl/lib:ro \
   -e LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.2:/usr/lib/wsl/lib/libcuda.so.1" \
   -e MALLOC_CONF="background_thread:true,dirty_decay_ms:2000,muzzy_decay_ms:2000" \
